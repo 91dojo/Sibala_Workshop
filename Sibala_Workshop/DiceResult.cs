@@ -36,6 +36,11 @@ namespace Sibala_Workshop
         public string Calculate()
         {
             int diceCount = DiceList.GroupBy(x => x).Where(g => g.Count() > 1).Count();
+            var temp = DiceList.GroupBy(x => x);
+            foreach (var item in temp)
+            {
+                item.ToString();
+            }
             if (diceCount == 0) {
                 return DiceResultType.NoPoint.ToString();
             }

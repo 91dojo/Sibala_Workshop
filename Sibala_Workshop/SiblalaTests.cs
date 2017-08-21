@@ -13,8 +13,8 @@ namespace Sibala_Workshop
         [Test]
         public void HasPoint_4SameHasPoint_4()
         {
-            DiceResult diceResult1 = new DiceResult { Result = DiceResultType.HasPoint, Points = 4 };
-            DiceResult diceResult2 = new DiceResult { Result = DiceResultType.HasPoint, Points = 4 };
+            DiceResult diceResult1 = new DiceResult { Result = DiceResultType.Points, Points = 4 };
+            DiceResult diceResult2 = new DiceResult { Result = DiceResultType.Points, Points = 4 };
             var compare = new DiceResultCompare();
             Assert.AreEqual(0, compare.Compare(diceResult1, diceResult2));
         }
@@ -24,12 +24,12 @@ namespace Sibala_Workshop
         {
             var deceResult1 = new DiceResult
             {
-                Result = DiceResultType.HasPoint,
+                Result = DiceResultType.Points,
                 Points = 7
             };
             var deceResult2 = new DiceResult
             {
-                Result = DiceResultType.HasPoint,
+                Result = DiceResultType.Points,
                 Points = 4
             };
             var compare = new DiceResultCompare();

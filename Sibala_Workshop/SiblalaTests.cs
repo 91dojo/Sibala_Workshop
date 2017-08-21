@@ -11,9 +11,11 @@ namespace Sibala_Workshop
     public class SiblalaTests
     {
         [Test]
-        public void Test1()
+        public void Test_Input_1234_return_nopoint()
         {
-
+            Dice d = new Dice(1, 2, 3, 4);
+            string result = d.Calculate();
+            Assert.AreEqual(DiceResultType.NoPoint.ToString(), result);
         }
     }
 }

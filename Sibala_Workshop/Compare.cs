@@ -6,12 +6,17 @@ using System.Threading.Tasks;
 
 namespace Sibala_Workshop
 {
-    public class DiceCompare : IComparer<DiceResult>
+    public class DiceResultCompare : IComparer<DiceResult>
     {
         public int Compare(DiceResult x, DiceResult y)
         {
             if (x.Result > y.Result) return 1;
-            if (x.Result == y.Result) return 0;
+            if (x.Result == y.Result)
+            {
+                if (x.Points > y.Points) return 1;
+                if (x.Points == y.Points) return 0;
+                return -1;
+            }
             return -1;
         }
     }

@@ -18,4 +18,13 @@ namespace Sibala_Workshop
         public int Points { get; set; }
         public DiceResultType Result { get; set; }
     }
+
+    public class Dice
+    {
+        public List<int> DiceList { get; set; }
+        public Dice(int p1, int p2, int p3, int p4)
+        {
+
+        }
+    }
 }

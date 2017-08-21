@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Sibala_Workshop
 {
-    public class Compare : IComparer<DiceResult>
+    public class DiceCompare : IComparer<DiceResult>
     {
-        int IComparer<DiceResult>.Compare(DiceResult x, DiceResult y)
+        public int Compare(DiceResult x, DiceResult y)
         {
             if (x.Result > y.Result) return 1;
             if (x.Result == y.Result) return 0;

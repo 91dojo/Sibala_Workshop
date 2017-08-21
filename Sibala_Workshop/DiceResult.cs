@@ -15,15 +15,10 @@ namespace Sibala_Workshop
         EighteenLa
     }
 
-    public class DiceResult
-    {
-        public int Points { get; set; }
-        public DiceResultType Result { get; set; }
-    }
-
     public class Dice
     {
         public List<int> DiceList { get; set; }
+
         public Dice(int p1, int p2, int p3, int p4)
         {
             DiceList = new List<int>();
@@ -45,7 +40,21 @@ namespace Sibala_Workshop
                 return DiceResultType.NoPoint.ToString();
             }
 
+<<<<<<< HEAD
             return "5 " + DiceResultType.Points.ToString();
         }
+=======
+        public DiceResult GetResult()
+        {
+            return new DiceResult();
+        }
+    }
+
+    public class DiceResult
+    {
+        public int MaxPoint { get; set; }
+        public int Points { get; set; }
+        public DiceResultType Result { get; set; }
+>>>>>>> e03e88590d360f0bcb764938fe554551b5ab238a
     }
 }

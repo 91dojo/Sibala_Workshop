@@ -10,8 +10,9 @@ namespace Sibala_Workshop
     {
         NoPoint,
         BG,
-        HasPoint,
-        Same
+        Points,
+        Same,
+        EighteenLa
     }
 
     public class DiceResult
@@ -34,8 +35,12 @@ namespace Sibala_Workshop
 
         public string Calculate()
         {
-            return DiceResultType.NoPoint.ToString();
-        }
+            int diceCount = DiceList.GroupBy(x => x).Where(g => g.Count() > 1).Count();
+            if (diceCount == 0) {
+                return DiceResultType.NoPoint.ToString();
+            }
 
+            return "5 " + DiceResultType.Points.ToString();
+        }
     }
 }

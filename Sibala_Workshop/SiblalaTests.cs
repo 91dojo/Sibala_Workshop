@@ -17,5 +17,13 @@ namespace Sibala_Workshop
             string result = d.Calculate();
             Assert.AreEqual(DiceResultType.NoPoint.ToString(), result);
         }
+
+        [Test]
+        public void Test_Input_1123_return_FivePoint()
+        {
+            Dice d = new Dice(1, 1, 2, 3);
+            string result = d.Calculate();
+            Assert.AreEqual("5 Points", result);
+        }
     }
 }

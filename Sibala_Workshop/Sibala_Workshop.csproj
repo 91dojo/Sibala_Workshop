@@ -54,6 +54,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="DiceResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SiblalaTests.cs" />
   </ItemGroup>

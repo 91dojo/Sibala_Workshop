@@ -11,6 +11,32 @@ namespace Sibala_Workshop
     public class SiblalaTests
     {
         [Test]
+        public void HasPoint_4SameHasPoint_4()
+        {
+            DiceResult diceResult1 = new DiceResult { Result = DiceResultType.HasPoint, Points = 4 };
+            DiceResult diceResult2 = new DiceResult { Result = DiceResultType.HasPoint, Points = 4 };
+            var compare = new DiceResultCompare();
+            Assert.AreEqual(0, compare.Compare(diceResult1, diceResult2));
+        }
+
+        [Test]
+        public void HasPoint_7BiggerThanHasPoint_4()
+        {
+            var deceResult1 = new DiceResult
+            {
+                Result = DiceResultType.HasPoint,
+                Points = 7
+            };
+            var deceResult2 = new DiceResult
+            {
+                Result = DiceResultType.HasPoint,
+                Points = 4
+            };
+            var compare = new DiceResultCompare();
+            Assert.AreEqual(1, compare.Compare(deceResult1, deceResult2));
+        }
+
+        [Test]
         public void SameBiggerThanHasPoint()
         {
             var deceResult1 = new DiceResult
@@ -23,7 +49,7 @@ namespace Sibala_Workshop
                 Result = DiceResultType.Same,
                 Points = 4
             };
-            var compare = new DiceCompare();
+            var compare = new DiceResultCompare();
             Assert.AreEqual(-1, compare.Compare(deceResult1, deceResult2));
         }
 

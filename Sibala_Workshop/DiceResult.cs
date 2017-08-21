@@ -31,19 +31,26 @@ namespace Sibala_Workshop
         public string Calculate()
         {
             int diceCount = DiceList.GroupBy(x => x).Where(g => g.Count() > 1).Count();
-            var temp = DiceList.GroupBy(x => x);
-            foreach (var item in temp)
-            {
-                item.ToString();
-            }
+            int point = 0;
+
             if (diceCount == 0) {
                 return DiceResultType.NoPoint.ToString();
             }
 
-<<<<<<< HEAD
-            return "5 " + DiceResultType.Points.ToString();
+            if (diceCount == 1)
+            {
+                point = DiceList.GroupBy(x => x).Where(g => g.Count() < 2).Sum(s=>s.Key);
+
+            }
+
+            if (diceCount == 2)
+            {
+                point = DiceList.Max() * 2;
+            }
+
+            return point.ToString() + DiceResultType.Points.ToString();
         }
-=======
+
         public DiceResult GetResult()
         {
             return new DiceResult();
@@ -55,6 +62,5 @@ namespace Sibala_Workshop
         public int MaxPoint { get; set; }
         public int Points { get; set; }
         public DiceResultType Result { get; set; }
->>>>>>> e03e88590d360f0bcb764938fe554551b5ab238a
     }
 }

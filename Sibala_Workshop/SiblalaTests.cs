@@ -15,7 +15,7 @@ namespace Sibala_Workshop
         {
             var deceResult1 = new DiceResult
             {
-                Result = DiceResultType.HasPoint,
+                Result = DiceResultType.Points,
                 Points = 10
             };
             var deceResult2 = new DiceResult
@@ -40,7 +40,7 @@ namespace Sibala_Workshop
         {
             Dice d = new Dice(1, 1, 2, 3);
             string result = d.Calculate();
-            Assert.AreEqual("5 Points", result);
+            Assert.AreEqual("5Points", result);
         }
 
         [Test]
@@ -48,7 +48,7 @@ namespace Sibala_Workshop
         {
             Dice d = new Dice(1, 1, 2, 2);
             string result = d.Calculate();
-            Assert.AreEqual("5 Points", result);
+            Assert.AreEqual("4Points", result);
         }
     }
 }
